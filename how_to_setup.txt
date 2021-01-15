@@ -1,0 +1,14 @@
+1st
+    Install git on your system. Get it on the official site
+        https://git-scm.com/download/win
+
+2nd
+    Open terminal or any command line tool.
+    Go to the location where you want to initialize git.
+    Type the following in the terminal
+        $   git config --global user.name "Ramdayal Munda"
+        $   git config --global user.email "r.dayal.munda@gmail.com"
+        $   git config --global push.default matching
+        $   git config --global alias.co checkout
+        $   git init
+    Now the git has been initialized
