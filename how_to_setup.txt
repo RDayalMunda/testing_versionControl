@@ -11,4 +11,76 @@
         $   git config --global push.default matching
         $   git config --global alias.co checkout
         $   git init
-    Now the git has been initialized
+    Now the git has been initialized and will continue to run until told otherwise
+
+3rd
+    We need to save file for the first time
+    in the terminal Type
+    (adding files)
+        $   git add .
+    (committing files) - 
+        $   git commit -am "initial commit"
+
+    Now the files have been applied in the current local repositpry of GIT
+
+4th
+    To add your gitHub account to the mix
+    First login to your github account
+    Create a new repository(public in this test)
+
+5th
+    but first we need to connect the terminal to our github account
+    To this we need to create an NSS key (a security key)
+    $   cat ~/.ssh/id_rsa.pub
+        if this doesnt work that means your have not itilialized it even once
+        don't worry go ahead and type the following to generate the key
+    $   ssh-keygen -of
+        it will ask you for a file name just press 'ENTER'
+    It will as for a passphrase- press 'ENTER' again and again
+        First it confirms where you want to save the key (.ssh/id_rsa),
+        and then it asks twice for a passphrase,
+        which you can leave empty if you don’t want to type a password when you use the key.
+        However, if you do use a password, make sure to add the -o option;
+        it saves the private key in a format that is more resistant to brute-force password cracking
+        than is the default format.
+        You can also use the ssh-agent tool to prevent having to enter the password each time.
+
+    Now go type the hash code generation command
+    $   cat ~/.ssh/id_rsa.pub
+    It should generate a long SSH sode for you. select the code and copy it as it will be useful
+
+6th
+    Not open you github account in any browser
+    Goto Setting
+    Goto SSH and GPG KEYS
+    Click on New SSH KEYS
+        Enter a tile and paste the code you just copied.
+    'Enter'
+
+7th
+    $   ssh -T git@github.com
+    you will be given the following message
+        The authenticity of host 'github.com (13.234.210.38)' can't be established.
+        RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.
+    just type 'yes'
+    Another mesage should be displayerd
+        Are you sure you want to continue connecting (yes/no)? yes
+    Warning: Permanently added 'github.com,13.234.210.38' (RSA) to the list of known hosts.
+    Hi RDayalMunda! You've successfully authenticated, but GitHub does not provide shell access.
+
+    Now we have logged in to github with the terminal
+
+8th
+    Now we have to type the code that were displayed when you created a new repositories
+    it will be something like
+    $   git remote add origin https://github.com/RDayalMunda/testing_versionControl.git
+    $   git branch -M main
+    $   git push -u origin main
+    Once you type this you will be asked to authenticate this
+    Wait for a moment till a browser pops up to get you to login to you account once again
+    If not don't worry it will be automated
+
+    You have successfully uploaded the code in that directory.
+    You should go check in your github account repositories for changes
+
+YOU have successfully initialised you terminal with your github account
